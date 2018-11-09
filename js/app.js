@@ -19,7 +19,9 @@ var allFeeds = [
         url: 'http://feeds.feedburner.com/html5rocks'
     }, {
         name: 'Linear Digressions',
+        // name: '',
         url: 'http://feeds.feedburner.com/udacity-linear-digressions'
+        // url: ''
     }
 ];
 
