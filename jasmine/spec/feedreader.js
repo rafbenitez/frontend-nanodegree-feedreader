@@ -102,14 +102,21 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
 
-        var previousFeed = $('.feed .entry')[0];
+        var previousFeed = '';
+        var newFeed = '';
 
         beforeEach(function(done) {
-            loadFeed(1, done);
+            loadFeed(0, function() {
+                previousFeed = document.querySelector('.feed').innerHTML;
+                loadFeed(1, function() {
+                    newFeed = document.querySelector('.feed').innerHTML;
+                    done();
+                });
+            });
         });
 
         it('should change feed display', function(done){
-            expect($('.feed .entry')[0]).not.toEqual(previousFeed);
+            expect(newFeed).not.toEqual(previousFeed);
             done();
         })
     });
