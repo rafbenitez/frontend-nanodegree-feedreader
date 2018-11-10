@@ -58,7 +58,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
         it('is hidden by default', function() {
-            expect($('body').hasClass('menu-hidden')).toBeTruthy();
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         })
 
          /* This test ensures the menu changes
@@ -68,9 +68,9 @@ $(function() {
           */
          it('toggles visibility on and off when clicked', function() {
              $('.menu-icon-link').click();
-             expect($('body').hasClass('menu-hidden')).toBeFalsy();
+             expect($('body').hasClass('menu-hidden')).toBe(false);
              $('.menu-icon-link').click();
-             expect($('body').hasClass('menu-hidden')).toBeTruthy();
+             expect($('body').hasClass('menu-hidden')).toBe(true);
          })
     });
 
@@ -88,9 +88,8 @@ $(function() {
              loadFeed(0, done);
          });
 
-         it('should contain at least one', function(done){
+         it('should contain at least one', function(){
              expect($('.feed .entry').length).toBeGreaterThan(0);
-             done();
          })
     });
 
@@ -115,9 +114,8 @@ $(function() {
             });
         });
 
-        it('should change feed display', function(done){
+        it('should change feed display', function(){
             expect(newFeed).not.toEqual(previousFeed);
-            done();
         })
     });
 }());

@@ -9,6 +9,7 @@ To get started, clone this repository from GitHub:
 ```
 $ git clone https://github.com/rafbenitez/frontend-nanodegree-feedreader.git
 ```
+Open index.html in a browser to run the tests.
 
 ## Built With
 
